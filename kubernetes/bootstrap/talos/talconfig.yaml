@@ -20,7 +20,7 @@ cniConfig:
 
 nodes:
   - hostname: "talos-001"
-    ipAddress: "192.168.1.36"
+    ipAddress: "192.168.1.145"
     installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/
     controlPlane: true
@@ -28,7 +28,39 @@ nodes:
       - interface: eth0
         dhcp: false
         addresses:
-          - "192.168.1.36/24"
+          - "192.168.1.145/24"
+        mtu: 1500
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
+        vip:
+          ip: "192.168.1.35"
+  - hostname: "talos-002"
+    ipAddress: "192.168.1.146"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/
+    controlPlane: true
+    networkInterfaces:
+      - interface: eth0
+        dhcp: false
+        addresses:
+          - "192.168.1.146/24"
+        mtu: 1500
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
+        vip:
+          ip: "192.168.1.35"
+  - hostname: "talos-003"
+    ipAddress: "192.168.1.140"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/
+    controlPlane: true
+    networkInterfaces:
+      - interface: eth0
+        dhcp: false
+        addresses:
+          - "192.168.1.140/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
