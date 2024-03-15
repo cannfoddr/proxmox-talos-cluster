@@ -2,3 +2,9 @@ home-kubernetes-talos-001.yaml
 talosconfig
 home-kubernetes-talos-002.yaml
 home-kubernetes-talos-003.yaml
+home-kubernetes-talos-cp-001.yaml
+home-kubernetes-talos-cp-002.yaml
+home-kubernetes-talos-cp-003.yaml
+home-kubernetes-talos-wk-001.yaml
+home-kubernetes-talos-wk-002.yaml
+home-kubernetes-talos-wk-003.yaml
