@@ -19,8 +19,8 @@ cniConfig:
   name: none
 
 nodes:
-  - hostname: "talos-001"
-    ipAddress: "192.168.1.112"
+  - hostname: "talos-cp-001"
+    ipAddress: "192.168.1.169"
     installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/6905bc709e5947573a4ec2d11723b58882936d3d0e15c708f7d78f0c689684a5
     controlPlane: true
@@ -28,15 +28,15 @@ nodes:
       - interface: eth0
         dhcp: false
         addresses:
-          - "192.168.1.112/24"
+          - "192.168.1.169/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         vip:
           ip: "192.168.1.35"
-  - hostname: "talos-002"
-    ipAddress: "192.168.1.109"
+  - hostname: "talos-cp-002"
+    ipAddress: "192.168.1.170"
     installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/6905bc709e5947573a4ec2d11723b58882936d3d0e15c708f7d78f0c689684a5
     controlPlane: true
@@ -44,15 +44,15 @@ nodes:
       - interface: eth0
         dhcp: false
         addresses:
-          - "192.168.1.109/24"
+          - "192.168.1.170/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         vip:
           ip: "192.168.1.35"
-  - hostname: "talos-003"
-    ipAddress: "192.168.1.117"
+  - hostname: "talos-cp-003"
+    ipAddress: "192.168.1.163"
     installDisk: "/dev/sda"
     talosImageURL: factory.talos.dev/installer/6905bc709e5947573a4ec2d11723b58882936d3d0e15c708f7d78f0c689684a5
     controlPlane: true
@@ -60,13 +60,55 @@ nodes:
       - interface: eth0
         dhcp: false
         addresses:
-          - "192.168.1.117/24"
+          - "192.168.1.163/24"
         mtu: 1500
         routes:
           - network: 0.0.0.0/0
             gateway: "192.168.1.1"
         vip:
           ip: "192.168.1.35"
+  - hostname: "talos-wk-001"
+    ipAddress: "192.168.1.165"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/6905bc709e5947573a4ec2d11723b58882936d3d0e15c708f7d78f0c689684a5
+    controlPlane: false
+    networkInterfaces:
+      - interface: eth0
+        dhcp: false
+        addresses:
+          - "192.168.1.165/24"
+        mtu: 1500
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
+  - hostname: "talos-wk-002"
+    ipAddress: "192.168.1.159"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/6905bc709e5947573a4ec2d11723b58882936d3d0e15c708f7d78f0c689684a5
+    controlPlane: false
+    networkInterfaces:
+      - interface: eth0
+        dhcp: false
+        addresses:
+          - "192.168.1.159/24"
+        mtu: 1500
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
+  - hostname: "talos-wk-003"
+    ipAddress: "192.168.1.154"
+    installDisk: "/dev/sda"
+    talosImageURL: factory.talos.dev/installer/6905bc709e5947573a4ec2d11723b58882936d3d0e15c708f7d78f0c689684a5
+    controlPlane: false
+    networkInterfaces:
+      - interface: eth0
+        dhcp: false
+        addresses:
+          - "192.168.1.154/24"
+        mtu: 1500
+        routes:
+          - network: 0.0.0.0/0
+            gateway: "192.168.1.1"
 
 patches:
   # Configure containerd
